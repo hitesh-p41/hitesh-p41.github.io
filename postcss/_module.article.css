@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------ *\
+	Article
+\* ------------------------------------------------------------ */
+
+.article { max-width: 1170px; padding: 14px 0; margin: auto; font-family: monospace; }
+.article h2 { font-size: 40px; margin-bottom: 19px; }
+.article h3 { font-size: 30px; margin-bottom: 19px; margin-top: 19px; }
+.article p { margin-bottom: 1em; }
+.article ul { padding-left: 40px; }
+.article ol { padding-left: 40px; }
+.article a { color: $color-action; }
+
+.article-head { padding-bottom: 59px; }
+.article-head:after { @extend clearfix; }
+
+.article-title { width: 407px; float: left; position: relative; z-index: 1; padding: 45px 80px 0 28px; }
+.article-title:before { content: ''; width: 556px; height: 556px; display: block; opacity: .5; position: absolute; top: -117px; left: -19px; border: 1px solid #4798da; border-radius: 50% ; }
+.article-title h6 { font-size: 14px; line-height: 1.5; color: $color-action; font-weight: 400; }
+.article-title-without-image h6 { font-size: 14px; line-height: 1.5; color: $color-action; font-weight: 400; }
+
+.article-image { position: relative; z-index: 2; overflow: hidden; }
+.article-image img { display: block; border-radius: 35px; }
+
+.article-body { line-height: 2; }
+.article-meta { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.5); font-weight: bold; }
