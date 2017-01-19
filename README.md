@@ -35,4 +35,3 @@ $ `jekyll build` (use GitBash on Windows / Terminal on OSX) in the blog director
 After building the blog, we need to copy the generated blog post to build folder of project.
 
 $ `gulp blog:publish`
-
