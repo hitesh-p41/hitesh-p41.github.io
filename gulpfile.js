@@ -28,18 +28,18 @@
 var config = {
     paths: {
         source: {
-            css     : './postcss',
-            js      : './js',
-            sprite  : './css/images/sprite',
+            css     : './src/postcss',
+            js      : './src/js',
+            sprite  : './src/css/images/sprite',
             blog    : './blog'
         },
         temp : {
             css     : './.temp'
         },
         dist : {
-            css     : './css',
-            js      : './js',
-            images  : './css/images'
+            css     : './src/css',
+            js      : './src/js',
+            images  : './src/css/images'
         },
         build: {
             path    : './build',
@@ -691,9 +691,14 @@ var modules = {
                 .pipe(rimraf({ force: true }));
         };
 
+        // var taskBuildCopy = function() {
+        //     return gulp.src(['**', '!~QA/**', '!partials/**', '!package.json', '!settings.json', '!peon.json', '!drone.json', '!README.md', '!gulpfile.js', '!' + config.paths.source.sprite + '/*', '!' + config.paths.source.css + '/*', '!**/*.map', '!build', '!*.html', '!blog/**', '!_config.yaml'])
+        //         .pipe(copy('build/'));
+        // };        
+
         var taskBuildCopy = function() {
-            return gulp.src(['**', '!~QA/**', '!partials/**', '!package.json', '!settings.json', '!peon.json', '!drone.json', '!README.md', '!gulpfile.js', '!' + config.paths.source.sprite + '/*', '!' + config.paths.source.css + '/*', '!**/*.map', '!build', '!*.html', '!blog/**', '!_config.yaml'])
-                .pipe(copy('build/'));
+            return gulp.src(['src/js**/*.*', 'src/css**/**/*.*', 'src/vendor**/**/*.*'])
+                .pipe(gulp.dest('build/'));
         };
 
         var taskBuildZip = function() {
@@ -1099,36 +1104,16 @@ gulp.task('serve', ['livereload', 'images:resize-sprite-source', 'css:import-mod
 });
 
 // Build Task
-gulp.task('build', ['build:clean'], function() {
+gulp.task('build', ['build:clean', 'jekyll:build'], function() {
     config.isBuilding = true;
 
-    runSequence('images:resize-sprite-source', 'css:lazy-rules', 'css:import-modules', 'css:compile', 'images:sprites', 'build:copy', 'build:include', 'images:optimize');
+    // runSequence('images:resize-sprite-source', 'css:lazy-rules', 'css:import-modules', 'css:compile', 'images:sprites', 'build:copy', 'build:include', 'images:optimize');
+    runSequence('images:resize-sprite-source', 'css:lazy-rules', 'css:import-modules', 'css:compile', 'images:sprites', 'build:copy', 'images:optimize');
 });
 
-gulp.task('lint', function() {
-    runSequence('css:lint:create');
+// Rebuild jekyll contents
+gulp.task('jekyll:build', function(cb) {
+    exec('jekyll build', function(error, stdout, stderr) {
+        cb(error);
+    });
 });
-
-// Build Task
-gulp.task('build:wp', function() {
-    config.isBuilding = true;
-
-    runSequence('images:resize-sprite-source', 'css:lazy-rules', 'css:import-modules', 'css:compile', 'images:sprites');
-});
-
-// publish blog, it will copy blog/_site contents to build directory.
-gulp.task('blog:publish', function(){
-    return gulp.src(['blog/_site/**', '!blog/_site/{css,css/**}', '!./blog/_site/{js,js/**}', '!./blog/_site/{vendor,vendor/**}'])
-                .pipe(gulp.dest('build/')); 
-});
-
-
-// Defaut Task
-gulp.task('default', ['serve']);
-
-// This task will copy all required js & css files into blog directory, because in jekyll blog and article we are using the same assets.
-gulp.task('blog:asset', function(){
-    return gulp.src(['./js**/*', './css**/**/*.*', './vendor**/**/*.*'])
-                .pipe(gulp.dest('./blog/_site/')); 
-});
-
