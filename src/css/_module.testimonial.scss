@@ -3,7 +3,7 @@
 \* ------------------------------------------------------------ */
 
 .testimonial { position: relative; padding: 0 70px 37px 108px; }
-.testimonial:before { content: '“'; font-size: 190px; line-height: 1; color: $color-action; position: absolute; top: -22px; left: -1px; }
+.testimonial:before { content: '\201C'; font-size: 190px; line-height: 1; color: $color-action; position: absolute; top: -22px; left: -1px; }
 
 .testimonial h5 { padding-left: 5px; }
 .testimonial h5 strong { color: $color-action; font-weight: 400; }
