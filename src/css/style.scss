@@ -2,7 +2,6 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 # only Main files contain this front matter, not partials.
 ---
-@charset "utf-8";
 
 @import "code";
 
@@ -22,70 +21,70 @@
 	I.   Generic
 \* ------------------------------------------------------------ */
 
-@import '_generic.reset.scss';
+@import "generic.reset";
 
-@import '_generic.base.scss';
+@import "generic.base";
 
-@import '_generic.helpers.scss';
+@import "generic.helpers";
 
 /* ------------------------------------------------------------ *\
 	II.  Regions
 \* ------------------------------------------------------------ */
 
-@import '_region.container.scss';
+@import "region.container";
 
-@import '_region.footer.scss';
+@import "region.footer";
 
-@import '_region.header.scss';
+@import "region.header";
 
-@import '_region.shell.scss';
+@import "region.shell";
 
-@import '_region.wrapper.scss';
+@import "region.wrapper";
 
 /* ------------------------------------------------------------ *\
 	III. Modules
 \* ------------------------------------------------------------ */
 
-@import '_module.accordion.scss';
+@import "module.accordion";
 
-@import '_module.animated.scss';
+@import "module.animated";
 
-@import '_module.article.scss';
+@import "module.article";
 
-@import '_module.blog.scss';
+@import "module.blog";
 
-@import '_module.btn.scss';
+@import "module.btn";
 
-@import '_module.comment.scss';
+@import "module.comment";
 
-@import '_module.contacts.scss';
+@import "module.contacts";
 
-@import '_module.feature.scss';
+@import "module.feature";
 
-@import '_module.form-elements.scss';
+@import "module.form-elements";
 
-@import '_module.form.scss';
+@import "module.form";
 
-@import '_module.list.scss';
+@import "module.list";
 
-@import '_module.nav.scss';
+@import "module.nav";
 
-@import '_module.partner.scss';
+@import "module.partner";
 
-@import '_module.process.scss';
+@import "module.process";
 
-@import '_module.section.scss';
+@import "module.section";
 
-@import '_module.service.scss';
+@import "module.service";
 
-@import '_module.testimonial.scss';
+@import "module.testimonial";
 
 
 /* ------------------------------------------------------------ *\
 	IV.  Themes
 \* ------------------------------------------------------------ */
 
-@import '_theme.fullpage.js.scss';
+@import "theme.fullpage.js";
 
-@import '_theme.owl.carousel.scss';
+@import "theme.owl.carousel";
 
