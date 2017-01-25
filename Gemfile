@@ -23,4 +23,4 @@ gem "jekyll", "3.3.1"
 #    gem "jekyll-feed", "~> 0.6"
 # end
 
-gem "jekyll-assets"
+# gem "jekyll-assets"
