@@ -9,4 +9,4 @@ phases:
       - echo "******** Building Jekyll site ********"
       - jekyll build
       - echo "******** Uploading to S3 ********"
-      - aws s3 sync _site/ s3://hitesh-p41.github.io
+      - aws s3 sync build/ s3://hitesh-p41.github.io

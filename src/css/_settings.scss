@@ -1,0 +1,26 @@
+$font-sans-serif:                   'Arial', 'Helvetica', sans-serif;
+$font-serif:                        'Times', serif;
+$font-arimo:                        'Arimo', sans-serif;
+$font-lato:                        'Lato', sans-serif;
+
+$font-size-base:                    16px;
+$line-height-base:                  1.75;
+
+$color-white:                       #fff;
+$color-black:                       #000;
+$color-base:                        #072b48;
+$color-action:                      #8fcdff;
+$color-line:                        #4798da;
+$color-circle:                      #0a3252;
+
+$breakpoint-mobile-small:           "max-width: 374px";
+$breakpoint-mobile-medium:          "max-width: 413px";
+$breakpoint-mobile:                 "max-width: 767px";
+$breakpoint-tablet-portrait:        "max-width: 1023px";
+$breakpoint-small-desktop:          "max-width: 1279px";
+$breakpoint-medium-desktop:         "max-width: 1440px";
+$breakpoint-large-desktop:          "max-width: 1600px";
+$breakpoint-animations:             "min-width: 1024px";
+$retina:                            "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+/* TODO Need to Fix */
+$breakpoint-mobile-landscape:				"only screen and (max-device-width : 767px) and (orientation : landscape)";

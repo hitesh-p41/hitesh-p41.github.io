@@ -2,8 +2,8 @@
 markdown: kramdown
 
 # Configuration
-# destination: ./blog/_site
-# source: ./blog
+destination: build
+source: src
 
 # Setup
 title: Particle41
@@ -11,8 +11,14 @@ email: info@particle41.com
 description: ''
 
 # Stuff
-exclude: ["Gemfile", 'css', 'js', 'vendor', 'event-samples', 'node_modules', 'postcss'] 
-keep_files: ['css', 'js', 'vendor', 'event-samples', 'node_modules', 'postcss']
+exclude: ['event-samples']
+keep_files: ['css', 'js']
+
+# Do not process but copy to build.
+vendor:
+  source: '_vendor'
+  destination: 'vendor'
+
 
 # Global handlers
 disqus_shortname: particle41
@@ -23,3 +29,17 @@ staging_host: stagingwwwparticle41
 collections:
   projects:
     output: true
+
+assets:
+  compress:
+    css: true
+  digest: true
+  sources:
+    - css
+
+sass:
+    sass_dir: css
+
+# gems:
+#   - jekyll-assets
+

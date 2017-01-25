@@ -1,0 +1,20 @@
+%clearfix { content: ''; line-height: 0; display: table; clear: both; }
+%appearance { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+%notext { white-space: nowrap; text-indent: 100%; text-shadow: none; overflow: hidden; }
+%unselectable { user-select: none; pointer-events: none; }
+
+@mixin chevron($dimensions, $borderWidth, $borderColor, $margin, $rotation, $origin, $transitionDuration)
+{ 
+	content: ''; 
+	width: $dimensions; 
+	height: $dimensions; 
+	display: inline-block; 
+	vertical-align: middle; 
+	border-width: 0 0 $borderWidth $borderWidth; 
+	border-style: solid; 
+	border-color: $borderColor; 
+	margin: $margin; 
+	transform: rotate($rotation); 
+	transform-origin: $origin; 
+	transition: transform $transitionDuration; 
+}

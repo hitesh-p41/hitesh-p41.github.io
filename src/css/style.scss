@@ -1,0 +1,90 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import '_code.scss';
+
+@import '_icons.scss';
+
+@import '_pagination.scss';
+
+@import '_settings.scss';
+
+@import '_sprite.scss';
+
+@import '_syntax.scss';
+
+@import '_tools.scss';
+
+/* ------------------------------------------------------------ *\
+	I.   Generic
+\* ------------------------------------------------------------ */
+
+@import '_generic.reset.scss';
+
+@import '_generic.base.scss';
+
+@import '_generic.helpers.scss';
+
+/* ------------------------------------------------------------ *\
+	II.  Regions
+\* ------------------------------------------------------------ */
+
+@import '_region.container.scss';
+
+@import '_region.footer.scss';
+
+@import '_region.header.scss';
+
+@import '_region.shell.scss';
+
+@import '_region.wrapper.scss';
+
+/* ------------------------------------------------------------ *\
+	III. Modules
+\* ------------------------------------------------------------ */
+
+@import '_module.accordion.scss';
+
+@import '_module.animated.scss';
+
+@import '_module.article.scss';
+
+@import '_module.blog.scss';
+
+@import '_module.btn.scss';
+
+@import '_module.comment.scss';
+
+@import '_module.contacts.scss';
+
+@import '_module.feature.scss';
+
+@import '_module.form-elements.scss';
+
+@import '_module.form.scss';
+
+@import '_module.list.scss';
+
+@import '_module.nav.scss';
+
+@import '_module.partner.scss';
+
+@import '_module.process.scss';
+
+@import '_module.section.scss';
+
+@import '_module.service.scss';
+
+@import '_module.testimonial.scss';
+
+
+/* ------------------------------------------------------------ *\
+	IV.  Themes
+\* ------------------------------------------------------------ */
+
+@import '_theme.fullpage.js.scss';
+
+@import '_theme.owl.carousel.scss';
+
